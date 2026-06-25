@@ -47,7 +47,7 @@
             top: 20%; right: -200px; z-index: -1; pointer-events: none;
         }
 
-        /* Animação de Entrada ao Rolar (Aparecer) */
+        /* Animação de Entrada ao Rolar */
         .appear-on-scroll {
             opacity: 0;
             transform: translateY(20px);
@@ -72,17 +72,6 @@
             0% { box-shadow: 0 0 10px rgba(0, 255, 170, 0.4), inset 0 0 5px rgba(0, 255, 170, 0.2); }
             50% { box-shadow: 0 0 25px rgba(0, 255, 170, 0.7), inset 0 0 10px rgba(0, 255, 170, 0.4); }
             100% { box-shadow: 0 0 10px rgba(0, 255, 170, 0.4), inset 0 0 5px rgba(0, 255, 170, 0.2); }
-        }
-
-        /* Simulação de Digitação para o Sentinela */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink-cursor 0.7s infinite;
-            color: #00FFAA;
-        }
-        @keyframes blink-cursor {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -190,10 +179,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 mb-20 sm:mb-24 items-center">
-                <div class="rounded-xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
-                    <img src="https://framerusercontent.com/images/qgU4e485cMgL6ukwbFQhhTcDdo.png" alt="ArgoCD Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                </div>
-                <div>
+                <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 border border-[#00E5FF]/30 rounded-full px-4 py-1.5 bg-[#00E5FF]/10 mb-4 sm:mb-6">
                         <i class="fa-solid fa-code-branch text-[#00E5FF] text-xs"></i>
                         <span class="font-mono text-[10px] sm:text-xs font-medium text-[#00E5FF] tracking-wider uppercase">GitOps · ArgoCD</span>
@@ -203,10 +189,16 @@
                         Automatize suas implantações de Kubernetes. O ArgoCD monitora seu repositório Git e garante que o estado do cluster esteja sempre em sincronia com o código, eliminando erros manuais.
                     </p>
                 </div>
+                <div class="rounded-xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl order-1 md:order-2">
+                    <img src="https://framerusercontent.com/images/qgU4e485cMgL6ukwbFQhhTcDdo.png" alt="ArgoCD Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 mb-20 sm:mb-24 items-center">
-                <div class="md:order-1 order-2">
+                <div class="rounded-xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl order-1 md:order-1">
+                    <img src="https://framerusercontent.com/images/bq3oChDoTIhAxbHcTrItbq85wg.png" alt="FinOps Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="order-2 md:order-2">
                     <div class="inline-flex items-center gap-2 border border-[#00FFAA]/30 rounded-full px-4 py-1.5 bg-[#00FFAA]/10 mb-4 sm:mb-6">
                         <i class="fa-solid fa-chart-line text-[#00FFAA] text-xs"></i>
                         <span class="font-mono text-[10px] sm:text-xs font-medium text-[#00FFAA] tracking-wider uppercase">Engenharia de FinOps</span>
@@ -216,47 +208,45 @@
                         O seu projeto se paga sozinho. Este dashboard mostra em tempo real a linha de "Requests Commitment" (o que a AWS te cobra) e o "CPU Usage" (o que seus usuários realmente usam). A Projex implementa Karpenter e auto-scaling inteligente para eliminar esse espaço em branco de desperdício, cortando sua fatura em até 40%.
                     </p>
                 </div>
-                <div class="rounded-xl overflow-hidden md:order-2 order-1 border border-white/10 bg-[#111] shadow-2xl">
-                    <img src="https://framerusercontent.com/images/bq3oChDoTIhAxbHcTrItbq85wg.png" alt="FinOps Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 mb-12 sm:mb-16 items-center">
+                <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 border border-[#00E5FF]/30 rounded-full px-4 py-1.5 bg-[#00E5FF]/10 mb-4 sm:mb-6">
                         <i class="fa-solid fa-satellite-dish text-[#00E5FF] text-xs"></i>
                         <span class="font-mono text-[10px] sm:text-xs font-medium text-[#00E5FF] tracking-wider uppercase">Observabilidade 360°</span>
                     </div>
                     <h3 class="font-chakra text-2xl sm:text-3xl font-bold mb-4">Sala de Comando e Observabilidade 360°</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm sm:text-base mb-8 lg:mb-0">
+                    <p class="text-gray-400 leading-relaxed text-sm sm:text-base">
                         Não pilote a sua empresa no escuro. Entregamos uma plataforma de telemetria avançada em tempo real com Grafana e Prometheus. Monitore latência, padrões de tráfego, saúde dos microsserviços e segurança de rede em um único link executivo no seu celular.
                     </p>
                 </div>
-                
-                <div class="flex flex-col gap-6 w-full h-full justify-between">
-                     <div class="rounded-xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
-                        <img src="https://framerusercontent.com/images/qFPNDLS6uouAVtmuhCapaHfOSLs.png" alt="Grafana Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                <div class="rounded-xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl order-1 md:order-2">
+                    <img src="https://framerusercontent.com/images/qFPNDLS6uouAVtmuhCapaHfOSLs.png" alt="Grafana Dashboard" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto w-full mt-6">
+                <div class="glass-card p-6 sm:p-8 border border-[#00FFAA]/40 bg-[#00FFAA]/5 relative overflow-hidden shadow-[0_0_20px_rgba(0,255,170,0.1)]">
+                    <div class="sentinela-pulse"></div>
+
+                    <div class="flex justify-between items-center mb-5 relative z-20">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-[#00FFAA] text-xl"></i>
+                            <span class="font-chakra font-bold text-xl text-white">Projex Sentinela</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-full border border-white/5 shadow-inner">
+                            <div class="w-2.5 h-2.5 rounded-full bg-[#00FFAA] animate-pulse shadow-[0_0_10px_#00FFAA]"></div>
+                            <span class="font-mono text-xs text-gray-300">03:14</span>
+                        </div>
                     </div>
                     
-                    <div class="glass-card p-5 sm:p-6 border border-[#00FFAA]/40 bg-[#00FFAA]/5 relative overflow-hidden shadow-[0_0_20px_rgba(0,255,170,0.1)] sentinela-container h-full flex flex-col justify-between">
-                        <div class="sentinela-pulse"></div>
+                    <p class="font-inter text-sm sm:text-base text-gray-300 leading-relaxed mb-6 relative z-20">
+                        Pico inesperado de requisições detectado às 03:14 no Gateway de Pagamentos. <span class="text-[#00E5FF] font-semibold">Autocura ativada.</span> Réplicas de servidores duplicadas automaticamente. Latência normalizada. <span class="text-[#00FFAA] font-semibold">Operação 100% segura.</span>
+                    </p>
 
-                        <div class="flex justify-between items-center mb-4 relative z-20">
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-shield-halved text-[#00FFAA] text-lg"></i>
-                                <span class="font-chakra font-bold text-lg text-neon-green">Projex Sentinela</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-black/40 px-3 py-1 rounded-full border border-white/5 shadow-inner">
-                                <div class="w-2.5 h-2.5 rounded-full bg-[#00FFAA] animate-pulse shadow-[0_0_10px_#00FFAA]"></div>
-                                <span class="font-mono text-xs text-gray-300">03:14</span>
-                            </div>
-                        </div>
-                        
-                        <p id="sentinela-text" class="typing-cursor font-inter text-sm sm:text-base text-gray-300 leading-relaxed mb-6 relative z-20 opacity-0 transition-opacity duration-300 ease-out"></p>
-
-                        <div class="flex items-center gap-2 text-[#00FFAA] font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold relative z-20">
-                            <i class="fa-solid fa-check text-neon-green"></i> Incidente resolvido sem intervenção humana
-                        </div>
+                    <div class="flex items-center gap-2 text-[#00FFAA] font-mono text-xs uppercase tracking-wider font-semibold relative z-20">
+                        <i class="fa-solid fa-check text-neon-green"></i> Incidente resolvido sem intervenção humana
                     </div>
                 </div>
             </div>
@@ -276,10 +266,10 @@
 
             <div class="flex justify-center mb-12 sm:mb-16">
                 <div class="bg-white/5 border border-white/10 rounded-full p-1 flex w-full max-w-sm sm:w-auto">
-                    <button id="btn-copiloto" onclick="togglePricing('copiloto')" class="flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-full font-chakra font-bold text-xs sm:text-sm transition-all bg-gradient-primary">
+                    <button id="btn-copiloto" onclick="togglePricing('copiloto')" class="flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-full font-chakra font-bold text-xs sm:text-sm transition-all bg-gradient-primary text-gray-900">
                         Modelo Copiloto
                     </button>
-                    <button id="btn-piloto" onclick="togglePricing('piloto')" class="flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-full font-chakra font-bold text-xs sm:text-sm text-gray-400 transition-all hover:text-white">
+                    <button id="btn-piloto" onclick="togglePricing('piloto')" class="flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-full font-chakra font-bold text-xs sm:text-sm text-gray-400 transition-all hover:text-white bg-transparent">
                         Piloto Automático
                     </button>
                 </div>
@@ -288,84 +278,84 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div class="glass-card p-6 sm:p-8 flex flex-col relative group hover:border-white/20 transition-colors h-full">
-                    <div class="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-6 relative z-20">
+                    <div class="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-6">
                         <i class="fa-solid fa-dollar-sign"></i>
                     </div>
-                    <div class="font-mono text-[10px] tracking-widest text-[#00E5FF] uppercase mb-2 relative z-20">Custos & Auditoria</div>
-                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-cyan relative z-20">FinOps Essential</h3>
-                    <div class="mb-6 relative z-20">
+                    <div class="font-mono text-[10px] tracking-widest text-[#00E5FF] uppercase mb-2">Custos & Auditoria</div>
+                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-cyan">FinOps Essential</h3>
+                    <div class="mb-6">
                         <span id="val-finops" class="font-mono text-2xl sm:text-3xl font-bold whitespace-nowrap text-white">R$ 4.500 <span class="text-xs sm:text-sm font-medium text-gray-400 font-inter tracking-normal">Taxa Única</span></span>
                     </div>
-                    <div class="inline-block border border-[#00E5FF]/30 bg-[#00E5FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max relative z-20">
+                    <div class="inline-block border border-[#00E5FF]/30 bg-[#00E5FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max">
                         <span class="font-mono text-[9px] sm:text-[10px] text-[#00E5FF] uppercase tracking-wider font-semibold">Setup & Consultoria</span>
                     </div>
-                    <p id="desc-finops" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow relative z-20">
+                    <p id="desc-finops" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow">
                         Auditoria profunda de desperdício, entrega dos códigos de limites de recursos, documentação técnica detalhada de boas práticas e 1 reunião técnica de alinhamento com a sua TI interna.
                     </p>
-                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto relative z-20">
+                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto">
                         Falar com Engenheiro
                     </a>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 flex flex-col relative group hover:border-white/20 transition-colors h-full">
-                    <div class="w-10 h-10 rounded-xl bg-[#00FFAA]/10 border border-[#00FFAA]/30 flex items-center justify-center text-[#00FFAA] mb-6 relative z-20">
+                    <div class="w-10 h-10 rounded-xl bg-[#00FFAA]/10 border border-[#00FFAA]/30 flex items-center justify-center text-[#00FFAA] mb-6">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <div class="font-mono text-[10px] tracking-widest text-[#00FFAA] uppercase mb-2 relative z-20">Disponibilidade & Risco</div>
-                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-green relative z-20">SRE Resilience</h3>
-                    <div class="mb-6 relative z-20">
+                    <div class="font-mono text-[10px] tracking-widest text-[#00FFAA] uppercase mb-2">Disponibilidade & Risco</div>
+                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-green">SRE Resilience</h3>
+                    <div class="mb-6">
                         <span id="val-sre" class="font-mono text-2xl sm:text-3xl font-bold whitespace-nowrap text-white">R$ 7.500 <span class="text-xs sm:text-sm font-medium text-gray-400 font-inter tracking-normal">Taxa Única</span></span>
                     </div>
-                    <div class="inline-block border border-[#00FFAA]/30 bg-[#00FFAA]/10 rounded-full px-3 py-1 mb-6 text-center w-max relative z-20">
+                    <div class="inline-block border border-[#00FFAA]/30 bg-[#00FFAA]/10 rounded-full px-3 py-1 mb-6 text-center w-max">
                         <span class="font-mono text-[9px] sm:text-[10px] text-[#00FFAA] uppercase tracking-wider font-semibold">Setup & Consultoria</span>
                     </div>
-                    <p id="desc-sre" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow relative z-20">
+                    <p id="desc-sre" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow">
                         Implantação completa do ecossistema GitOps (ArgoCD) e Service Mesh (Istio), manuais (Runbooks) instrucionais de novos deploys seguros e 1 reunião técnica de handover.
                     </p>
-                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto relative z-20">
+                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto">
                         Falar com Engenheiro
                     </a>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 flex flex-col relative group hover:border-white/20 transition-colors h-full">
-                    <div class="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-6 relative z-20">
+                    <div class="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-6">
                         <i class="fa-solid fa-lock"></i>
                     </div>
-                    <div class="font-mono text-[10px] tracking-widest text-[#00E5FF] uppercase mb-2 relative z-20">Segurança & Governança</div>
-                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-cyan relative z-20">SecOps & IaC</h3>
-                    <div class="mb-6 relative z-20">
+                    <div class="font-mono text-[10px] tracking-widest text-[#00E5FF] uppercase mb-2">Segurança & Governança</div>
+                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-cyan">SecOps & IaC</h3>
+                    <div class="mb-6">
                         <span id="val-secops" class="font-mono text-2xl sm:text-3xl font-bold whitespace-nowrap text-white">R$ 11.000 <span class="text-xs sm:text-sm font-medium text-gray-400 font-inter tracking-normal">Taxa Única</span></span>
                     </div>
-                    <div class="inline-block border border-[#00E5FF]/30 bg-[#00E5FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max relative z-20">
+                    <div class="inline-block border border-[#00E5FF]/30 bg-[#00E5FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max">
                         <span class="font-mono text-[9px] sm:text-[10px] text-[#00E5FF] uppercase tracking-wider font-semibold">Setup & Consultoria</span>
                     </div>
-                    <p id="desc-secops" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow relative z-20">
+                    <p id="desc-secops" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow">
                         Entrega dos blueprints e templates estruturais em Terraform, manual completo de Disaster Recovery e 2 reuniões intensivas de treinamento de segurança com a sua equipe de TI.
                     </p>
-                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto relative z-20">
+                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl border border-white/10 bg-white/5 font-chakra font-semibold text-sm text-center hover:bg-white/10 transition-colors mt-auto">
                         Falar com Engenheiro
                     </a>
                 </div>
 
-                <div class="glass-card-purple p-6 sm:p-8 flex flex-col relative group h-full">
-                    <div class="absolute top-0 left-6 sm:left-8 bg-gradient-purple px-3 py-1 rounded-b-lg relative z-20">
+                <div class="glass-card-purple p-6 sm:p-8 flex flex-col relative group h-full overflow-hidden">
+                    <div class="absolute top-0 left-6 sm:left-8 bg-gradient-purple px-3 py-1 rounded-b-lg">
                         <span class="font-mono text-[8px] sm:text-[9px] font-bold text-white tracking-widest">MAIS COMPLETO</span>
                     </div>
-                    <div class="w-10 h-10 rounded-xl bg-[#7F00FF]/10 border border-[#7F00FF]/30 flex items-center justify-center text-[#7F00FF] mb-6 mt-6 sm:mt-4 relative z-20">
+                    <div class="w-10 h-10 rounded-xl bg-[#7F00FF]/10 border border-[#7F00FF]/30 flex items-center justify-center text-[#7F00FF] mb-6 mt-6 sm:mt-4">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <div class="font-mono text-[10px] tracking-widest text-[#7F00FF] uppercase mb-2 relative z-20">Combo de Elite</div>
-                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-purple relative z-20">Projex Absolute</h3>
-                    <div class="mb-6 relative z-20">
+                    <div class="font-mono text-[10px] tracking-widest text-[#7F00FF] uppercase mb-2">Combo de Elite</div>
+                    <h3 class="font-chakra text-lg sm:text-xl font-bold mb-4 text-neon-purple">Projex Absolute</h3>
+                    <div class="mb-6">
                         <span id="val-absolute" class="font-mono text-2xl sm:text-3xl font-bold whitespace-nowrap text-white">R$ 22.000 <span class="text-xs sm:text-sm font-medium text-gray-400 font-inter tracking-normal">Taxa Única</span></span>
                     </div>
-                    <div class="inline-block border border-[#7F00FF]/30 bg-[#7F00FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max relative z-20">
+                    <div class="inline-block border border-[#7F00FF]/30 bg-[#7F00FF]/10 rounded-full px-3 py-1 mb-6 text-center w-max">
                         <span id="badge-absolute" class="font-mono text-[9px] sm:text-[10px] text-[#7F00FF] uppercase tracking-wider font-semibold">O Pacote Completo</span>
                     </div>
-                    <p id="desc-absolute" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow relative z-20">
+                    <p id="desc-absolute" class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow">
                         Master Blueprint de toda a arquitetura de nuvem corporativa, documentação técnica total e unificada de todos os pilares e 1 Workshop estratégico de 4 horas gravado.
                     </p>
-                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl bg-gradient-primary font-chakra font-bold text-sm text-center shadow-[0_0_15px_rgba(0,255,170,0.2)] hover:scale-[1.02] transition-transform mt-auto text-gray-900 relative z-20">
+                    <a href="https://wa.me/5511977944798" target="_blank" class="w-full py-3 rounded-xl bg-gradient-primary font-chakra font-bold text-sm text-center shadow-[0_0_15px_rgba(0,255,170,0.2)] hover:scale-[1.02] transition-transform mt-auto text-gray-900">
                         Falar com Engenheiro
                     </a>
                 </div>
@@ -375,9 +365,9 @@
     </section>
 
     <section id="suporte" class="appear-on-scroll py-16 sm:py-24 border-t border-white/5 relative overflow-hidden">
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#00FFAA]/5 to-[#00E5FF]/5 blur-[100px] pointer-events-none rounded-full relative z-10"></div>
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#00FFAA]/5 to-[#00E5FF]/5 blur-[100px] pointer-events-none rounded-full"></div>
         
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
             <div class="font-mono text-xs font-semibold tracking-widest text-[#00FFAA] mb-4 uppercase">Sem Tickets ou Espera</div>
             <h2 class="font-chakra text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Suporte de Engenharia Direto ao Ponto</h2>
             <p class="text-gray-400 text-base sm:text-lg mb-10 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -486,10 +476,6 @@
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Iniciar digitação quando o sentinela estiver visível
-                    if (entry.target.classList.contains('sentinela-container')) {
-                        typeSentinela();
-                    }
                 }
             });
         }, { threshold: 0.1 });
@@ -497,52 +483,6 @@
         document.querySelectorAll('.appear-on-scroll').forEach((el) => {
             observer.observe(el);
         });
-
-        const sentinelaObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    typeSentinela();
-                    sentinelaObserver.unobserve(entry.target);
-                }
-            })
-        }, { threshold: 0.5 });
-        sentinelaObserver.observe(document.querySelector('.sentinela-container'));
-
-        // Função de Simulação de Digitação para o Sentinela
-        function typeSentinela() {
-            const textElement = document.getElementById('sentinela-text');
-            const finalHtml = 'Pico inesperado de requisições detectado às 03:14 no Gateway de Pagamentos. <span class="text-[#00E5FF] font-semibold">Autocura ativada.</span> Réplicas de servidores duplicadas automaticamente. Latência normalizada. <span class="text-[#00FFAA] font-semibold text-neon-green">Operação 100% segura.</span>';
-            
-            // Texto limpo para digitação gradual
-            const plainText = finalHtml.replace(/<[^>]+>/g, '');
-            let plainTextIndex = 0;
-            
-            // Tornar elemento visível e limpar cursor de digitação de outra instância
-            textElement.classList.remove('typing-cursor');
-            textElement.classList.add('typing-cursor');
-            textElement.classList.add('opacity-100');
-            textElement.innerHTML = '';
-            
-            function nextChar() {
-                if (plainTextIndex < plainText.length) {
-                    // Adicionar caractere no meio do texto HTML completo para preservar formatação
-                    const typedSoFar = finalHtml.slice(0, finalHtml.indexOf(plainText.slice(plainTextIndex))) + plainText.slice(plainTextIndex, plainTextIndex+1);
-                    textElement.innerHTML = typedSoFar;
-                    plainTextIndex++;
-                    setTimeout(nextChar, Math.random() * 20 + 20); // Intervalo aleatório suave
-                } else {
-                    // Fim da digitação
-                    textElement.classList.remove('typing-cursor');
-                    textElement.innerHTML = finalHtml; // Garantir HTML final limpo
-                }
-            }
-            
-            //nextChar();
-            // Versão rápida para não ficar esperando:
-            textElement.innerHTML = finalHtml;
-            textElement.classList.remove('typing-cursor');
-        }
-
     </script>
 </body>
 </html>
